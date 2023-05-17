@@ -10,10 +10,13 @@
       <div id="slider" class="box">
         <div id="slider-holder">
           <ul>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
+            {% for i in products_4 %}
+           <li><a href="#"><img src="{{ i.preview_img.url }}" alt="" /></a></li>
+            {% endfor %}
+<!--            <li><a href="#"><img src="{% static './css/images/slide1.jpg' %}" alt="" /></a></li>-->
+<!--            <li><a href="#"><img src="{% static './css/images/slide1.jpg' %}" alt="" /></a></li>-->
+<!--            <li><a href="#"><img src="{% static './css/images/slide1.jpg' %}" alt="" /></a></li>-->
+<!--            <li><a href="#"><img src="{% static './css/images/slide1.jpg' %}" alt="" /></a></li>-->
           </ul>
         </div>
         <div id="slider-nav"> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> </div>
@@ -23,7 +26,7 @@
       <div class="products">
         <div class="cl">&nbsp;</div>
         <ul>
-          <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
+          <li> <a href="#"><img src="{% static './css/images/big1.jpg' %}" alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
               <div class="product-desc">
@@ -33,7 +36,7 @@
                 <strong class="price">$58.99</strong> </div>
             </div>
           </li>
-          <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
+          <li> <a href="#"><img src="{% static './css/images/big1.jpg' %}" alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
               <div class="product-desc">
@@ -43,7 +46,7 @@
                 <strong class="price">$58.99</strong> </div>
             </div>
           </li>
-          <li class="last"> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
+          <li class="last"> <a href="#"><img src="{% static './css/images/big1.jpg' %}" alt="" /></a>
             <div class="product-info">
               <h3>LOREM IPSUM</h3>
               <div class="product-desc">
@@ -94,19 +97,21 @@
         <h2>Categories <span></span></h2>
         <div class="box-content">
           <ul>
-            <li><a href="#">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
-            <li><a href="#">Category 3</a></li>
-            <li><a href="#">Category 4</a></li>
-            <li><a href="#">Category 5</a></li>
-            <li><a href="#">Category 6</a></li>
-            <li><a href="#">Category 7</a></li>
-            <li><a href="#">Category 8</a></li>
-            <li><a href="#">Category 9</a></li>
-            <li><a href="#">Category 10</a></li>
-            <li><a href="#">Category 11</a></li>
-            <li><a href="#">Category 12</a></li>
-            <li class="last"><a href="#">Category 13</a></li>
+            {% for i in categories %}
+            <li><a href="#">{{ i.title }}</a></li>
+            {% endfor %}
+<!--            <li><a href="#">Category 2</a></li>-->
+<!--            <li><a href="#">Category 3</a></li>-->
+<!--            <li><a href="#">Category 4</a></li>-->
+<!--            <li><a href="#">Category 5</a></li>-->
+<!--            <li><a href="#">Category 6</a></li>-->
+<!--            <li><a href="#">Category 7</a></li>-->
+<!--            <li><a href="#">Category 8</a></li>-->
+<!--            <li><a href="#">Category 9</a></li>-->
+<!--            <li><a href="#">Category 10</a></li>-->
+<!--            <li><a href="#">Category 11</a></li>-->
+<!--            <li><a href="#">Category 12</a></li>-->
+<!--            <li class="last"><a href="#">Category 13</a></li>-->
           </ul>
         </div>
       </div>
@@ -122,27 +127,29 @@
     <div class="more-products">
       <div class="more-products-holder">
         <ul>
-          <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
-          <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
-          <li class="last"><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
+          {% for i in products %}
+          <li><a href="#"><img src="{{ i.preview_img.url }}" alt="" /></a></li>
+            {% endfor %}
+<!--          <li><a href="#"><img src="{% static './css/images/small2.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small3.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small4.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small5.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small6.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small7.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small1.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small2.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small3.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small4.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small5.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small6.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small7.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small1.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small2.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small3.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small4.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small5.jpg' %}" alt="" /></a></li>-->
+<!--          <li><a href="#"><img src="{% static './css/images/small6.jpg' %}" alt="" /></a></li>-->
+<!--          <li class="last"><a href="#"><img src="{% static './css/images/small7.jpg' %}" alt="" /></a></li>-->
         </ul>
       </div>
       <div class="more-nav"> <a href="#" class="prev">previous</a> <a href="#" class="next">next</a> </div>
